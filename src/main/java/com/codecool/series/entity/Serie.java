@@ -20,6 +20,7 @@ public class Serie {
     private String description;
 
 
+    @ElementCollection
     @Enumerated(EnumType.STRING)
     @Singular("genre")
     private List<Genre> genre;
