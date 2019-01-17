@@ -10,7 +10,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @Entity
-public class Series {
+public class Serie {
 
     @Id
     @GeneratedValue

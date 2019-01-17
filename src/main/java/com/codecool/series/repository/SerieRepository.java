@@ -1,4 +1,7 @@
 package com.codecool.series.repository;
 
-public interface SerieRepository {
+import com.codecool.series.entity.Serie;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface SerieRepository extends JpaRepository<Serie, Long> {
 }
