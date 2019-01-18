@@ -1,14 +1,10 @@
 package com.codecool.series.entity;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
@@ -20,5 +16,19 @@ public class Season {
     @Id
     @GeneratedValue
     private Long id;
+
+    private Integer numberOfEpisodes;
+
+    private Long creationYear;
+
+    @ManyToOne
+    private Serie serie;
+
+    private Integer numberOfSeason;
+
+    @Singular
+    @OneToMany(mappedBy = "season", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @EqualsAndHashCode.Exclude
+    private Set<Episode> episodes;
 
 }
