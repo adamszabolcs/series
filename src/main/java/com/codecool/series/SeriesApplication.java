@@ -4,7 +4,7 @@ import com.codecool.series.entity.Episode;
 import com.codecool.series.entity.Genre;
 import com.codecool.series.entity.Season;
 import com.codecool.series.entity.Series;
-import com.codecool.series.repository.SerieRepository;
+import com.codecool.series.repository.SeriesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -18,7 +18,7 @@ import java.time.LocalDate;
 public class SeriesApplication {
 
     @Autowired
-    private SerieRepository serieRepository;
+    private SeriesRepository seriesRepository;
 
     public static void main(String[] args) {
         SpringApplication.run(SeriesApplication.class, args);
@@ -86,7 +86,7 @@ public class SeriesApplication {
             first.setSeries(wire);
             second.setSeries(wire);
 
-            serieRepository.save(wire);
+            seriesRepository.save(wire);
 
         };
     }
