@@ -19,6 +19,7 @@ public class Series {
 
     @Column(nullable = false)
     private String name;
+
     private String description;
 
     @Enumerated(EnumType.STRING)
