@@ -1,7 +1,7 @@
 package com.codecool.series.repository;
 
 import com.codecool.series.entity.Genre;
-import com.codecool.series.entity.Serie;
+import com.codecool.series.entity.Series;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
-import static org.junit.Assert.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
@@ -21,7 +20,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class AllRepositoryTest {
 
     @Autowired
-    private SerieRepository serieRepository;
+    private SeriesRepository seriesRepository;
 
     @Autowired
     private SeasonRepository seasonRepository;
@@ -34,7 +33,7 @@ public class AllRepositoryTest {
 
     @Test
     public void saveOneSerie() {
-        Serie theWire = Serie.builder()
+        Series theWire = Series.builder()
                 .name("The wire")
                 .genre(Genre.CRIME)
                 .genre(Genre.DRAMA)
@@ -42,8 +41,8 @@ public class AllRepositoryTest {
                 .description("Baltimore drug scene, seen through the eyes of drug dealers and law enforcement.")
                 .build();
 
-        serieRepository.save(theWire);
-        List<Serie> series = serieRepository.findAll();
+        seriesRepository.save(theWire);
+        List<Series> series = seriesRepository.findAll();
 
         assertThat(series)
                 .hasSize(1)
