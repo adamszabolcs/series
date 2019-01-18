@@ -55,7 +55,6 @@ public class SeriesApplication {
 
             Season first = Season.builder()
                     .creationYear(2002L)
-                    .numberOfEpisodes(13)
                     .numberOfSeason(1)
                     .episode(onePerOne)
                     .episode(onePerTwo)
@@ -63,7 +62,6 @@ public class SeriesApplication {
 
             Season second = Season.builder()
                     .creationYear(2003L)
-                    .numberOfEpisodes(12)
                     .numberOfSeason(2)
                     .episode(twoPerOne)
                     .episode(twoPerTwo)
