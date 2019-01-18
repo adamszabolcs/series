@@ -22,7 +22,7 @@ public class Season {
     private Long creationYear;
 
     @ManyToOne
-    private Serie serie;
+    private Series series;
 
     private Integer numberOfSeason;
 

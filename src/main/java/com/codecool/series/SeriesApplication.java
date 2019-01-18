@@ -3,7 +3,7 @@ package com.codecool.series;
 import com.codecool.series.entity.Episode;
 import com.codecool.series.entity.Genre;
 import com.codecool.series.entity.Season;
-import com.codecool.series.entity.Serie;
+import com.codecool.series.entity.Series;
 import com.codecool.series.repository.SerieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -69,7 +69,7 @@ public class SeriesApplication {
                     .episode(twoPerTwo)
                     .build();
 
-            Serie wire = Serie.builder()
+            Series wire = Series.builder()
                     .name("The Wire")
                     .genre(Genre.CRIME)
                     .genre(Genre.DRAMA)
@@ -83,8 +83,8 @@ public class SeriesApplication {
             onePerTwo.setSeason(first);
             twoPerOne.setSeason(second);
             twoPerTwo.setSeason(second);
-            first.setSerie(wire);
-            second.setSerie(wire);
+            first.setSeries(wire);
+            second.setSeries(wire);
 
             serieRepository.save(wire);
 
